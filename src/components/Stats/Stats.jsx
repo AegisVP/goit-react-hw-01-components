@@ -1,6 +1,6 @@
 import css from './Stats.module.css';
 
-const Statistics = ({ statsList = [] }) => (
+const Statistics = ({ title, statsList = [] }) => (
 	<section className={css['statistics']}>
 		{title && <h2 className={css['title']}>{title}</h2>}
 
