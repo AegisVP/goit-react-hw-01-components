@@ -1,8 +1,8 @@
 import css from './Stats.module.css';
 
-const Statistics = ({ statsList = [] }) => (
+const Statistics = ({ title, statsList = [] }) => (
 	<section className={css['statistics']}>
-		<h2 className={css['title']}>Upload stats</h2>
+		{title && <h2 className={css['title']}>{title}</h2>}
 
 		<ul className={css['stat-list']}>
 			{statsList.map(({ id, label, percentage }) => (
