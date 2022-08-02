@@ -1,22 +1,22 @@
 import css from './Stats.module.css';
 
 const Statistics = ({ title, statsList = [] }) => (
-	<section className={css['statistics']}>
-		{title && <h2 className={css['title']}>{title}</h2>}
+  <section className={css['statistics']}>
+    {title && <h2 className={css['title']}>{title}</h2>}
 
-		<ul className={css['stat-list']}>
-			{statsList.map(({ id, label, percentage }) => (
-				<Stat key={id} label={label} percentage={percentage} />
-			))}
-		</ul>
-	</section>
+    <ul className={css['stat-list']}>
+      {statsList.map(({ id, label, percentage }) => (
+        <Stat key={id} label={label} percentage={percentage} />
+      ))}
+    </ul>
+  </section>
 );
 
 const Stat = ({ label, percentage }) => (
-	<li className={css['item']}>
-		<span className={css['label']}>{label}</span>
-		<span className={css['percentage']}>{percentage}%</span>
-	</li>
+  <li className={css['item']}>
+    <span className={css['label']}>{label}</span>
+    <span className={css['percentage']}>{percentage}%</span>
+  </li>
 );
 
 export { Statistics };

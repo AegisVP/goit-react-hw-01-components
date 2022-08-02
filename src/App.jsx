@@ -10,33 +10,33 @@ import friendsList from './data/friends.json';
 import transactionHistory from './data/transactions.json';
 
 function App() {
-	return (
-		<>
-			<Section title="User profile">
-				<Profile
-					avatarURL={userProfile.avatar}
-					userName={userProfile.username}
-					userTag={userProfile.tag}
-					location={userProfile.location}
-					followers={userProfile.stats.followers}
-					views={userProfile.stats.views}
-					likes={userProfile.stats.likes}
-				/>
-			</Section>
+  return (
+    <>
+      <Section title="User profile">
+        <Profile
+          avatarURL={userProfile.avatar}
+          userName={userProfile.username}
+          userTag={userProfile.tag}
+          location={userProfile.location}
+          followers={userProfile.stats.followers}
+          views={userProfile.stats.views}
+          likes={userProfile.stats.likes}
+        />
+      </Section>
 
-			<Section title="Statistics">
-				<Statistics statsList={statsData} />
-			</Section>
+      <Section title="Statistics">
+        <Statistics statsList={statsData} />
+      </Section>
 
-			<Section title="Friends">
-				<Friends friendsList={friendsList} />
-			</Section>
+      <Section title="Friends">
+        <Friends friendsList={friendsList} />
+      </Section>
 
-			<Section title="Transactions">
-				<Transactions transactionHistory={transactionHistory} />
-			</Section>
-		</>
-	);
+      <Section title="Transactions">
+        <Transactions transactionHistory={transactionHistory} />
+      </Section>
+    </>
+  );
 }
 
 export { App };
