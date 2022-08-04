@@ -29,11 +29,28 @@ export const theme = {
     large: '10px',
     round: '50%',
   },
-  margin: returnParams,
-  padding: returnParams,
+  margin: `margin: ${returnParams}`,
+  padding: `padding: ${returnParams}`,
   mp: returnParams,
 };
 
 function returnParams(...sizes) {
-  return sizes.map(s => (s ? `${this.spacing[s]}px` : '0')).join(' ');
+  const resultArray = [];
+
+  for (const size of sizes) {
+    let index = size;
+    
+    if (index === 0) {
+      resultArray.push('0');
+    } else if (index > 0) {
+      if (index > this.spacing.length) index = this.spacing.length;
+      resultArray.push(`${this.spacing[index]}px`);
+    } else if (index < 0) {
+      index = index * -1;
+      if (index > this.spacing.length) index = this.spacing.length;
+      resultArray.push(`-${this.spacing[index]}px`);
+    }
+  }
+
+  return resultArray.join(' ');
 }

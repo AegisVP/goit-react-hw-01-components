@@ -22,7 +22,7 @@ export const StatsList = styled.ul`
   justify-content: space-around;
 
   width: 100%;
-  margin: -${p => p.theme.mp(1)} -${p => p.theme.mp(1, 0)};
+  margin: ${p => p.theme.mp(-1, -1, 0)};
   padding: ${p => p.theme.mp(0)};
 
   list-style: none;

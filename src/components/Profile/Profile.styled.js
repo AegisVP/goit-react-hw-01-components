@@ -40,7 +40,7 @@ export const StatList = styled.ul`
   align-items: flex-start;
   justify-content: space-around;
 
-  margin: -${p => p.theme.mp(2)};
+  margin: ${p => p.theme.mp(-2)};
   padding: ${p => p.theme.mp(0)};
   width: 100%;
 
