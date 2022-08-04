@@ -1,8 +1,8 @@
-import { Section } from './components/Section/Section';
-import { Profile } from './components/Profile/Profile';
-import { Statistics } from './components/Stats/Stats';
-import { Friends } from './components/Friends/Friends';
-import { Transactions } from './components/Transactions/Transactions';
+import { Section } from '../Section/Section';
+import { Profile } from '../Profile/Profile';
+import { Statistics } from '../Stats/Stats';
+import { Friends } from '../Friends/Friends';
+import { Transactions } from '../Transactions/Transactions';
 // import { Box } from './components/Box';
 
 import userProfile from './data/user.json';
