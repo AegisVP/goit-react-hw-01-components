@@ -35,6 +35,8 @@ export const theme = {
 };
 
 function returnParams(...sizes) {
+  if (sizes.length === 0) return;
+
   const resultArray = [];
 
   for (const size of sizes) {
