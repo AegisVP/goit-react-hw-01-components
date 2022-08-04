@@ -3,6 +3,7 @@ import { Profile } from './components/Profile/Profile';
 import { Statistics } from './components/Stats/Stats';
 import { Friends } from './components/Friends/Friends';
 import { Transactions } from './components/Transactions/Transactions';
+// import { Box } from './components/Box';
 
 import userProfile from './data/user.json';
 import statsData from './data/data.json';

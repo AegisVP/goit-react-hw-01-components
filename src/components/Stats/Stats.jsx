@@ -1,22 +1,24 @@
-import css from './Stats.module.css';
+// import css from './Stats.module.css';
+import { StatValue } from 'components/Profile/Profile.styled';
+import { Stats, StatsTitle, StatsList, StatItem, StatLabel } from './Stats.styled';
 
 const Statistics = ({ title, statsList = [] }) => (
-  <section className={css['statistics']}>
-    {title && <h2 className={css['title']}>{title}</h2>}
+  <Stats>
+    {title && <StatsTitle>{title}</StatsTitle>}
 
-    <ul className={css['stat-list']}>
+    <StatsList>
       {statsList.map(({ id, label, percentage }) => (
         <Stat key={id} label={label} percentage={percentage} />
       ))}
-    </ul>
-  </section>
+    </StatsList>
+  </Stats>
 );
 
-const Stat = ({ label, percentage }) => (
-  <li className={css['item']}>
-    <span className={css['label']}>{label}</span>
-    <span className={css['percentage']}>{percentage}%</span>
-  </li>
+const Stat = ({ id, label, percentage }) => (
+  <StatItem key={id}>
+    <StatLabel>{label}</StatLabel>
+    <StatValue>{percentage}%</StatValue>
+  </StatItem>
 );
 
 export { Statistics };
