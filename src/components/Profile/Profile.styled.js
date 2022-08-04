@@ -1,4 +1,6 @@
-.profile {
+import styled from 'styled-components';
+
+const ProfileCard = styled.div`
   margin: 0;
   padding: 0;
   width: 300px;
@@ -11,35 +13,29 @@
   border-radius: 10px;
 
   overflow: hidden;
-}
+`;
 
-.description {
-  padding: 10px;
-
-  background-color: #ffffff;
-}
-
-.avatar {
+export const Avatar = styled.img`
   margin: 0 0 10px 0;
   width: 100%;
-}
+`;
 
-.name,
-.tag,
-.location {
+export const Name = styled.p`
+  margin: 0 0 5px 0;
+
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+export const Info = styled.p`
   margin: 0 0 5px 0;
 
   font-size: 16px;
   font-weight: normal;
-}
+`;
 
-.name {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.stats {
+export const StatList = styled.ul`
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
@@ -49,9 +45,9 @@
   width: 100%;
 
   list-style: none;
-}
+`;
 
-.stat {
+export const StatItem = styled.li`
   margin: 10px;
   width: calc((100%-10 * 6 / 3));
 
@@ -60,13 +56,16 @@
   align-items: center;
 
   background-color: #ccdddd;
-}
+`;
 
-.label {
+export const StatLabel = styled.span`
   margin: 0;
   font-weight: bold;
-}
-.quantity {
+`;
+
+export const StatValue = styled.span`
   margin: 0;
   font-weight: normal;
-}
+`;
+
+export { ProfileCard };

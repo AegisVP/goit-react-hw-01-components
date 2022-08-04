@@ -1,10 +1,11 @@
-import css from './Section.module.css';
+// import css from './Section.module.css';
+import { SectionWrapper, SectionTitle } from "./Section.styled";
 
 const Section = ({ title, children }) => (
-  <div className={css['section']}>
-    {title && <h2 className={css['title']}>{title}</h2>}
+  <SectionWrapper>
+    {title && <SectionTitle>{title}</SectionTitle>}
     {children}
-  </div>
+  </SectionWrapper>
 );
 
 export { Section };

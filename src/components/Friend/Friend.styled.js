@@ -1,14 +1,6 @@
-.friend-list {
-  list-style: none;
+import styled from 'styled-components';
 
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-  margin: -5px;
-  padding: 10px;
-}
-
-.friend {
+export const FriendCard = styled.li`
   display: flex;
   align-items: center;
   width: 300px;
@@ -16,29 +8,23 @@
   margin: 5px;
   background-color: #f0f0f0;
   border-radius: 5px;
-}
+`;
 
-.status {
+export const Status = styled.span`
   display: inline-block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  margin: 0 15px;
+  background-color: ${p => (p.isOnline ? 'green' : 'red')};
+`;
+
+export const Avatar = styled.img`
   margin: 0 10px 0 0;
-}
+`;
 
-.online {
-  background-color: green;
-}
-
-.offline {
-  background-color: red;
-}
-
-.avatar {
-  margin: 0 10px 0 0;
-}
-.name {
+export const Name = styled.p`
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
-}
+`;

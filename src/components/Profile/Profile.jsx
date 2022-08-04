@@ -1,29 +1,41 @@
-import css from './Profile.module.css';
+import { ProfileCard, Avatar, Name, Info, StatList, StatItem, StatLabel, StatValue } from './Profile.styled';
+import { Box } from '../Box';
 
-const Profile = ({ avatarURL = 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png', userName, userTag, location, followers = '-', views = '-', likes = '-' }) => (
-  <div className={css['profile']}>
-    <div className={css['description']}>
-      <img src={avatarURL} alt="User avatar" className={css['avatar']} />
-      <p className={css['name']}>{userName}</p>
-      <p className={css['tag']}>{userTag}</p>
-      <p className={css['location']}>{location}</p>
-    </div>
+export const Profile = ({ avatarURL = 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png', userName, userTag, location, followers = '-', views = '-', likes = '-' }) => {
+  const stats = [
+    {
+      label: 'Followers',
+      value: followers,
+    },
+    {
+      label: 'Views',
+      value: views,
+    },
+    {
+      label: 'Likes',
+      value: likes,
+    },
+  ];
 
-    <ul className={css['stats']}>
-      <li className={css['stat']}>
-        <span className={css['label']}>Followers</span>
-        <span className={css['quantity']}>{followers ? followers : '-'}</span>
-      </li>
-      <li className={css['stat']}>
-        <span className={css['label']}>Views</span>
-        <span className={css['quantity']}>{views ? views : '-'}</span>
-      </li>
-      <li className={css['stat']}>
-        <span className={css['label']}>Likes</span>
-        <span className={css['quantity']}>{likes ? likes : '-'}</span>
-      </li>
-    </ul>
-  </div>
-);
+  return (
+    <ProfileCard>
+      <Box padding="10px" background-color="ffffff">
+        <Avatar src={avatarURL} alt="User avatar" />
+        <Name>{userName}</Name>
+        <Info>{userTag}</Info>
+        <Info>{location}</Info>
+      </Box>
 
-export { Profile };
+      <StatList>{stats.map(sMap)}</StatList>
+    </ProfileCard>
+  );
+};
+
+function sMap(stat) {
+  return (
+    <StatItem key={stat.label}>
+      <StatLabel>{stat.label}</StatLabel>
+      <StatValue>{stat.value}</StatValue>
+    </StatItem>
+  );
+}

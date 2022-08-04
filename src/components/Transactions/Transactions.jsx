@@ -1,29 +1,29 @@
-import css from './Transactions.module.css';
+import { TableBody, TableHeader, TranRow, TranType, TranAmount, TranCurrency, TransactionList } from "./Transactions.styled";
 
 const Transactions = ({ transactionHistory = [] }) => (
-  <table className={css['transaction-history']}>
-    <thead className={css['table-head']}>
+  <TransactionList>
+    <TableHeader>
       <tr>
         <th>Type</th>
         <th>Amount</th>
         <th>Currency</th>
       </tr>
-    </thead>
+    </TableHeader>
 
-    <tbody className={css['table-body']}>
+    <TableBody>
       {transactionHistory.map(({ id, type, amount, currency }) => (
         <Transaction key={id} type={type} amount={amount} currency={currency} />
       ))}
-    </tbody>
-  </table>
+    </TableBody>
+  </TransactionList>
 );
 
 const Transaction = ({ type, amount, currency }) => (
-  <tr className={css['table-datarow']}>
-    <td className={css['table-column--type']}>{type}</td>
-    <td className={css['table-column--amount']}>{amount}</td>
-    <td className={css['table-column--currency']}>{currency}</td>
-  </tr>
+  <TranRow>
+    <TranType>{type}</TranType>
+    <TranAmount>{amount}</TranAmount>
+    <TranCurrency>{currency}</TranCurrency>
+  </TranRow>
 );
 
 export { Transactions };

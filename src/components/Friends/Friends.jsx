@@ -1,12 +1,12 @@
-import { Friend } from './Friend';
-import css from './Friends.module.css';
+import { Friend } from '../Friend/Friend';
+import { FriendList } from './Friends.styled';
 
 const Friends = ({ friendsList = [] }) => (
-  <ul className={css['friend-list']}>
+  <FriendList>
     {friendsList.map(({ id, avatar, name, isOnline }) => (
-      <Friend key={id} id={id} avatar={avatar} name={name} isOnline={isOnline} />
+      <Friend key={id} avatar={avatar} name={name} isOnline={isOnline} />
     ))}
-  </ul>
+  </FriendList>
 );
 
 export { Friends };
