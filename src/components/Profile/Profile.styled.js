@@ -40,32 +40,32 @@ export const StatList = styled.ul`
   align-items: flex-start;
   justify-content: space-around;
 
-  margin: -10px;
-  padding: 0;
+  margin: -${p => p.theme.mp(2)};
+  padding: ${p => p.theme.mp(0)};
   width: 100%;
 
   list-style: none;
 `;
 
 export const StatItem = styled.li`
-  margin: 10px;
+  margin: ${p => p.theme.mp(2)};
   width: calc((100%-10 * 6 / 3));
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  background-color: #ccdddd;
+  background-color: ${p=>p.theme.colors.statsBackground};
 `;
 
 export const StatLabel = styled.span`
-  margin: 0;
-  font-weight: bold;
+  margin: ${p => p.theme.mp(0)};
+  font-weight: ${p => p.theme.fontWeights.bold};
 `;
 
 export const StatValue = styled.span`
-  margin: 0;
-  font-weight: normal;
+  margin: ${p => p.theme.mp(0)};
+  font-weight: ${p => p.theme.fontWeights.normal};
 `;
 
 export { ProfileCard };

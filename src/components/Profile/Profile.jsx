@@ -1,5 +1,5 @@
 import { ProfileCard, Avatar, Name, Info, StatList, StatItem, StatLabel, StatValue } from './Profile.styled';
-import { Box } from '../Box';
+import { Box } from '../Common/Box';
 
 export const Profile = ({ avatarURL = 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png', userName, userTag, location, followers = '-', views = '-', likes = '-' }) => {
   const stats = [

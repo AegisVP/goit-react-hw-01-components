@@ -5,19 +5,18 @@ export const SectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
 
-  margin: 0 0 20px;
-  padding: 10px;
+  margin: ${p => p.theme.mp(0, 0, 3)};
+  padding: ${p => p.theme.mp(2)};
   width: 600px;
 
-  /* border: 5px solid #CCCCCC; */
-  /* background-color: #EFEFEF; */
-  border-radius: 5px;
+  background-color: ${p => p.theme.colors.sectionBackground};
+  border-radius: ${p => p.theme.radii.normal};
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 `;
 
 export const SectionTitle = styled.h2`
-  margin: 0 0 20px;
+  margin: ${p => p.theme.mp(0, 0, 3)};
 
-  font-size: 24px;
-  font-weight: bold;
+  font-size: ${p => p.theme.fontSizes.xl};
+  font-weight: ${p => p.theme.fontWeights.bold};
 `;

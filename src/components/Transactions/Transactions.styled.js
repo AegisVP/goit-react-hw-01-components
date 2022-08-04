@@ -1,44 +1,44 @@
 import styled from 'styled-components';
 
 export const TransactionList = styled.table`
-  margin: 0;
-  padding: 5px;
+  margin: ${p => p.theme.mp(0)};
+  padding: ${p => p.theme.mp(1)};
 
   width: 500px;
 
-  font-size: 16px;
-  font-weight: normal;
+  font-size: ${p => p.theme.fontSizes.m};
+  font-weight: ${p => p.theme.fontWeights.normal};
 `;
 
 export const TableHeader = styled.thead`
-  padding: 5px;
+  padding: ${p => p.theme.mp(1)};
 
-  font-size: 16px;
-  font-weight: bold;
+  font-size: ${p => p.theme.fontSizes.m};
+  font-weight: ${p => p.theme.fontWeights.bold};
   text-transform: uppercase;
 
-  background-color: #009999;
-  color: #ffffff;
+  background-color: ${p => p.theme.colors.transactions.headerBackground};
+  color: ${p=>p.theme.colors.inverseText};
 `;
 
 export const TableBody = styled.tbody`
-  font-size: 16px;
-  font-weight: normal;
-  color: #555555;
-  background-color: #ffffff;
+  font-size: ${p => p.theme.fontSizes.m};
+  font-weight: ${ p => p.theme.fontWeights.normal};
+  color: ${ p => p.theme.colors.mediumText};
+  background-color: ${ p => p.theme.colors.pageBackground};
 `;
 
 export const TranRow = styled.tr`
-  :nth-child(2n) {background-color: #e8eeee;}
+  :nth-child(2n) {background-color: ${ p => p.theme.colors.transactions.secondRow};}
 `;
 
 export const TranType = styled.td`
-  padding: 0 0 0 15px;
+  padding:${ p => p.theme.mp(0,0,0,3)};
   width: 60%;
 `;
 
 export const TranAmount = styled.td`
-  padding: 0 10px 0;
+  padding:${ p => p.theme.mp(0,2,0)};
   width: 20%;
   text-align: right;
 `;

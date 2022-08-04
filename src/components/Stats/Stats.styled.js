@@ -5,15 +5,15 @@ export const Stats = styled.div`
   flex-direction: column;
   align-items: center;
 
-  margin: 0;
-  padding: 10px;
+  margin: ${p => p.theme.mp(0)};
+  padding: ${p => p.theme.mp(2)};
   width: 300px;
 `;
 
 export const StatsTitle = styled.h2`
-  font-weight: bold;
-  font-size: 18px;
-  margin: 0 0 10px;
+  font-weight: ${p => p.theme.fontWeights.bold};
+  font-size: ${p => p.theme.fontSizes.m};
+  margin: ${p => p.theme.mp(0, 0, 2)};
 `;
 
 export const StatsList = styled.ul`
@@ -22,24 +22,24 @@ export const StatsList = styled.ul`
   justify-content: space-around;
 
   width: 100%;
-  margin: -5px -5px 0px;
-  padding: 0;
+  margin: -${p => p.theme.mp(1)} -${p => p.theme.mp(1, 0)};
+  padding: ${p => p.theme.mp(0)};
 
   list-style: none;
-  background-color: #dddddd;
+  background-color: ${p => p.theme.colors.statsBackground};
 `;
 
 export const StatItem = styled.li`
-  margin: 5px;
+  margin: ${p => p.theme.mp(1)};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: calc((100%-5 * 5) / 5);
-  background-color: #ffffff;
-  font-size: 12px;
+  background-color: ${p => p.theme.colors.pageBackground};
+  font-size: ${p => p.theme.fontSizes.s};
 `;
 
 export const StatLabel = styled.span`
-  font-weight: bold;
+  font-weight: ${p => p.theme.fontWeights.bold};
 `;
